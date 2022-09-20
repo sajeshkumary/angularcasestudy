@@ -1,0 +1,5 @@
+    <ul>
+        <li *ngFor="let item of history" (click)="SearchAgain(item.keyword)">
+            {{item.username==""?"Not LoggedIn":item.username}}  -  {{item.keyword}}  -  {{item.searchdate | date:'long'}}  
+        </li>
+    </ul>

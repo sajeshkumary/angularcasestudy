@@ -1,0 +1,53 @@
+<form [formGroup]="myForm" (ngSubmit)="SignUp()">
+
+    <table>
+        <tr>
+            <td>
+                <label class="form-control">User Name</label>
+            </td>
+            <td>
+                <input type="text" class="form-control" formControlName="uname" >
+                <span *ngIf="uname.touched && !uname.valid" class="danger" 
+                appErrorColor appErrorclr = "2">
+                    Please Enter Username
+                </span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label class="form-control">Password</label>
+            </td>
+            <td>
+                <input type="text" class="form-control" formControlName="pwd">
+                <span *ngIf="pwd.touched && !pwd.valid" class="danger">
+                    <span *ngIf="pwd.errors['required']">
+                        Please Enter Password
+                    </span>
+                    <span *ngIf="pwd.errors['pwdErr']">
+                        Please Enter valid Password
+                    </span>
+                </span>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="form-control">Retype Password</label>
+            </td>
+            <td>
+                <input type="text" class="form-control" formControlName="rpwd">
+                <span *ngIf="rpwd.touched && !rpwd.valid" class="danger">
+                  Please retype Password
+                </span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+               <input type="submit" value="Register" class="btn btn-success"/>
+            </td>
+        </tr>
+
+    </table>
+</form>    

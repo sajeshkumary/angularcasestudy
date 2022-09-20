@@ -1,0 +1,26 @@
+<div class="row">
+<div class="col-md-8">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Type Some keyword and Search" 
+        aria-label="Type Some keyword and Search" aria-describedby="button-addon2" [(ngModel)]="keyword">
+        <button class="btn btn-outline-secondary" type="button" (click)="search()" id="button-addon2">Search</button>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+<div class="row" >
+    <div class="col-sm-3 alert alert success"  *ngFor="let item of retresults.hits">
+        <app-resultitem [resitem]="item" ></app-resultitem>
+    </div>
+
+</div>
+<ng-template  #nores>
+    <span class="alert alert-danger">
+        No Results Found
+    </span>
+</ng-template>
+</div>
+
+</div>
+    
